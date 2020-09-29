@@ -1,0 +1,30 @@
+<div class="card">
+    <div class="card-header">
+        <h4 class="card-title">Libros en Google</h4>
+    </div>
+    <div class="card-body">
+      <div class="form-group">
+        <label for="">Clave de búsqueda</label>
+        <input type="text"
+          class="form-control" name="" id="" [(ngModel)]="clave" placeholder="indique el nombre del libro">
+      </div>
+      <!--funcion esta en el componente-->
+      <button type="button" class="btn btn-primary"
+        (click)="btnBuscar()">
+        Buscar
+      </button>
+    </div>
+    <div class="card-footer text-muted">
+      <div *ngIf="aLibros.length">
+        <p class="h4">Resultado</p>
+        <ul>
+          <!--este es el recorrido con ngfor para el array aLibros-->
+          <li *ngFor="let libro of aLibros">
+            <a [href]="selfLink">
+              {{libro}}
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
